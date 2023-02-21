@@ -1,0 +1,41 @@
+<!doctype html>
+{% load static %}
+<head>
+    <title>Hello Azure - Python Quickstart</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+</head>
+<html>
+   <body>
+     <main>
+        <div class="px-4 py-3 my-2 text-center">
+            <h1 class="display-6 fw-bold text-primary">Nika Shakarami: mártir da liberdade de expressão</h1>
+        </div>
+        <form method="post" action="getquery">
+            {% csrf_token %}
+            <div class="col-md-6 mx-auto text-center">
+                <div>
+                    <div>
+                        <div><label>
+                        Em 20 de setembro de 2022 a garota iraniana de 16 anos Nika Shakarami desapareceu em Teerã
+                        durante os protestos iranianos após a morte de outra jovem ativista. Os acontecimentos que se
+                        seguiram são tenebrosos. Nesta aplicação o ChatGPT foi treinado para responder perguntas
+                        sobre esses acontecimentos.
+                        </label></div>
+                    </div>
+                    <div><label> </label></div>
+                </div>
+                <label for="query" class="form-label fw-bold fs-5">
+                    Digite a sua pergunta em linguagem natural:
+                </label>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center align-items-center my-1">
+                    <textarea name="query" id="query" rows="5" cols="80" style="text-align: left;"></textarea>
+                </div>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center my-2">
+                  <button type="submit" class="btn btn-primary btn-lg px-4 gap-3">Enviar</button>
+                </div>
+            </div>
+        </form>
+     </main>
+   </body>
+</html>
