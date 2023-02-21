@@ -1,0 +1,56 @@
+<!doctype html>
+{% load static %}
+<head>
+    <title>Hello Azure - Python Quickstart</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+</head>
+<html>
+   <body>
+     <main>
+        <div class="px-4 py-3 my-2 text-center">
+            <h1 class="display-6 fw-bold text-primary">Nika Shakarami: mártir da liberdade de expressão</h1>
+        </div>
+        <form method="post" action="testa">
+            {% csrf_token %}
+            <div class="col-md-6 mx-auto text-center">
+                <div>
+                    <div>
+                        <div><label>
+                        Primeiramente, vamos testar se você é um ser humano.
+                        </label></div>
+                        <div><label>
+                        Por favor responda à pergunta abaixo conforme a instrução:
+                        </label></div>
+                        <div><label>
+                        Por exemplo, se a pergunta for "Quanto é dois mais dois?" você deve digitar: 2+2=4
+                        </label></div>
+                        <div><label>
+                        Se a pergunta for "Quanto é três vezes (dez mais dois)?" você deve digitar: 3x(10+2)=36
+                        </label></div>
+                        <div><label>
+                        Se a pergunta for "Quanto é cem dividido por cinco mais cinco?" você deve digitar: 100/5+5=25
+                        </label></div>
+                        <div><label>
+                        Atenção: "vezes" é x, não *
+                        </label></div>
+                    </div>
+                    <div><label> </label></div>
+                </div>
+                <label for="resposta" class="form-label fw-bold fs-5">
+                    {{ mytext }}
+                </label>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center align-items-center my-1">
+                    <input type="text" class="form-control" id="resposta" name="resposta" style="width: 128px; text-align: left;">
+                </div>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center align-items-center my-1">
+                    <input type="text" class="form-control" id="key" name="key" value="{{ key }}" hidden>
+                </div>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center my-2">
+                  <button type="submit" class="btn btn-primary btn-lg px-4 gap-3">Enviar</button>
+                </div>
+            </div>
+        </form>
+     </main>
+   </body>
+</html>
